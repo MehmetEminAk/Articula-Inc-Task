@@ -7,23 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30F24CA787B400F7DF406989 /* Pods_Articula_Inc_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A28827705E961DAEBC2F7F4 /* Pods_Articula_Inc_Task.framework */; };
+		D032DD1429E5A48D003FF9E8 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032DD1229E5A48D003FF9E8 /* FriendCell.swift */; };
+		D032DD1529E5A48D003FF9E8 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D032DD1329E5A48D003FF9E8 /* FriendCell.xib */; };
+		D032DD1829E5AA57003FF9E8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D032DD1729E5AA57003FF9E8 /* Kingfisher */; };
+		D032DD1A29E5E206003FF9E8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032DD1929E5E206003FF9E8 /* Network.swift */; };
+		D032DD1C29E5E6C9003FF9E8 /* RtmTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032DD1B29E5E6C9003FF9E8 /* RtmTokenModel.swift */; };
+		D032DD1E29E5E6D7003FF9E8 /* RtcTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032DD1D29E5E6D7003FF9E8 /* RtcTokenModel.swift */; };
 		D0751ADF29E4267200308E45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751ADE29E4267200308E45 /* AppDelegate.swift */; };
 		D0751AE129E4267200308E45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751AE029E4267200308E45 /* SceneDelegate.swift */; };
-		D0751AE329E4267200308E45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751AE229E4267200308E45 /* ViewController.swift */; };
-		D0751AE629E4267200308E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0751AE429E4267200308E45 /* Main.storyboard */; };
+		D0751AE329E4267200308E45 /* CallScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751AE229E4267200308E45 /* CallScreenVC.swift */; };
 		D0751AE829E4267700308E45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0751AE729E4267700308E45 /* Assets.xcassets */; };
 		D0751AEB29E4267700308E45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0751AE929E4267700308E45 /* LaunchScreen.storyboard */; };
+		D0751AF429E4290900308E45 /* AIAEC in Frameworks */ = {isa = PBXBuildFile; productRef = D0751AF329E4290900308E45 /* AIAEC */; };
+		D0751AF629E4290900308E45 /* AINS in Frameworks */ = {isa = PBXBuildFile; productRef = D0751AF529E4290900308E45 /* AINS */; };
+		D0751AF829E4290900308E45 /* AudioBeauty in Frameworks */ = {isa = PBXBuildFile; productRef = D0751AF729E4290900308E45 /* AudioBeauty */; };
+		D0751AFA29E4290900308E45 /* DRM in Frameworks */ = {isa = PBXBuildFile; productRef = D0751AF929E4290900308E45 /* DRM */; };
+		D0751AFC29E4290900308E45 /* RtcBasic in Frameworks */ = {isa = PBXBuildFile; productRef = D0751AFB29E4290900308E45 /* RtcBasic */; };
+		D0751AFE29E4290900308E45 /* SpatialAudio in Frameworks */ = {isa = PBXBuildFile; productRef = D0751AFD29E4290900308E45 /* SpatialAudio */; };
+		D0751B0029E42ACD00308E45 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751AFF29E42ACD00308E45 /* Constants.swift */; };
+		D0751B0929E42E8100308E45 /* CallScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B0829E42E8100308E45 /* CallScreenExtension.swift */; };
+		D0751B0B29E42ECB00308E45 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B0A29E42ECB00308E45 /* General.swift */; };
+		D0751B0D29E42FA600308E45 /* CallScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B0C29E42FA600308E45 /* CallScreenVM.swift */; };
+		D0751B1029E450EA00308E45 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B0F29E450EA00308E45 /* TabBar.swift */; };
+		D0751B1229E4518E00308E45 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B1129E4518E00308E45 /* MessagesVC.swift */; };
+		D0751B1529E4CDC300308E45 /* AgoraChat in Frameworks */ = {isa = PBXBuildFile; productRef = D0751B1429E4CDC300308E45 /* AgoraChat */; };
+		D0751B1729E4CF9100308E45 /* ChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0751B1629E4CF9100308E45 /* ChatVC.xib */; };
+		D0F140B629E56741008C6BF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F140B529E56741008C6BF8 /* GoogleService-Info.plist */; };
+		D0F140B829E567BA008C6BF8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140B729E567BA008C6BF8 /* SignInVC.swift */; };
+		D0F140BC29E56863008C6BF8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140BB29E56863008C6BF8 /* DB.swift */; };
+		D0F140BE29E56B30008C6BF8 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140BD29E56B30008C6BF8 /* AuthVM.swift */; };
+		D0F140C129E576E2008C6BF8 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D0F140C029E576E2008C6BF8 /* JGProgressHUD */; };
+		D0F140C329E57815008C6BF8 /* SignInVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140C229E57815008C6BF8 /* SignInVCExtension.swift */; };
+		D0F140C529E57947008C6BF8 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140C429E57947008C6BF8 /* Friend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37FC72C16375250EA29A8FEB /* Pods-Articula Inc Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Articula Inc Task.release.xcconfig"; path = "Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task.release.xcconfig"; sourceTree = "<group>"; };
+		6EB55FB68AD6CDD1ACA8C251 /* Pods-Articula Inc Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Articula Inc Task.debug.xcconfig"; path = "Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task.debug.xcconfig"; sourceTree = "<group>"; };
+		9A28827705E961DAEBC2F7F4 /* Pods_Articula_Inc_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Articula_Inc_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D032DD1229E5A48D003FF9E8 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		D032DD1329E5A48D003FF9E8 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		D032DD1929E5E206003FF9E8 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D032DD1B29E5E6C9003FF9E8 /* RtmTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RtmTokenModel.swift; sourceTree = "<group>"; };
+		D032DD1D29E5E6D7003FF9E8 /* RtcTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RtcTokenModel.swift; sourceTree = "<group>"; };
 		D0751ADB29E4267200308E45 /* Articula Inc Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Articula Inc Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0751ADE29E4267200308E45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0751AE029E4267200308E45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0751AE229E4267200308E45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D0751AE529E4267200308E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0751AE229E4267200308E45 /* CallScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVC.swift; sourceTree = "<group>"; };
 		D0751AE729E4267700308E45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0751AEA29E4267700308E45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0751AEC29E4267700308E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0751AFF29E42ACD00308E45 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0751B0829E42E8100308E45 /* CallScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenExtension.swift; sourceTree = "<group>"; };
+		D0751B0A29E42ECB00308E45 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		D0751B0C29E42FA600308E45 /* CallScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVM.swift; sourceTree = "<group>"; };
+		D0751B0F29E450EA00308E45 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		D0751B1129E4518E00308E45 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		D0751B1629E4CF9100308E45 /* ChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatVC.xib; sourceTree = "<group>"; };
+		D0F140B529E56741008C6BF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0F140B729E567BA008C6BF8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		D0F140BB29E56863008C6BF8 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		D0F140BD29E56B30008C6BF8 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
+		D0F140C229E57815008C6BF8 /* SignInVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVCExtension.swift; sourceTree = "<group>"; };
+		D0F140C429E57947008C6BF8 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +78,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0751AFE29E4290900308E45 /* SpatialAudio in Frameworks */,
+				D0751AF829E4290900308E45 /* AudioBeauty in Frameworks */,
+				D0751AF429E4290900308E45 /* AIAEC in Frameworks */,
+				D0751AFA29E4290900308E45 /* DRM in Frameworks */,
+				D032DD1829E5AA57003FF9E8 /* Kingfisher in Frameworks */,
+				D0751AF629E4290900308E45 /* AINS in Frameworks */,
+				D0751AFC29E4290900308E45 /* RtcBasic in Frameworks */,
+				D0751B1529E4CDC300308E45 /* AgoraChat in Frameworks */,
+				D0F140C129E576E2008C6BF8 /* JGProgressHUD in Frameworks */,
+				30F24CA787B400F7DF406989 /* Pods_Articula_Inc_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D622C60B512AAB39ABC90B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6EB55FB68AD6CDD1ACA8C251 /* Pods-Articula Inc Task.debug.xcconfig */,
+				37FC72C16375250EA29A8FEB /* Pods-Articula Inc Task.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C091DD9708ED6CBFC727FC0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A28827705E961DAEBC2F7F4 /* Pods_Articula_Inc_Task.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0751AD229E4267100308E45 = {
 			isa = PBXGroup;
 			children = (
 				D0751ADD29E4267200308E45 /* Articula Inc Task */,
 				D0751ADC29E4267200308E45 /* Products */,
+				4D622C60B512AAB39ABC90B7 /* Pods */,
+				C091DD9708ED6CBFC727FC0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +132,96 @@
 		D0751ADD29E4267200308E45 /* Articula Inc Task */ = {
 			isa = PBXGroup;
 			children = (
-				D0751ADE29E4267200308E45 /* AppDelegate.swift */,
-				D0751AE029E4267200308E45 /* SceneDelegate.swift */,
-				D0751AE229E4267200308E45 /* ViewController.swift */,
-				D0751AE429E4267200308E45 /* Main.storyboard */,
-				D0751AE729E4267700308E45 /* Assets.xcassets */,
-				D0751AE929E4267700308E45 /* LaunchScreen.storyboard */,
+				D0751B0629E42E6600308E45 /* Extensions */,
+				D0751B0529E42C2E00308E45 /* Support */,
+				D0751B0429E42C2500308E45 /* Models */,
+				D0751B0329E42C1C00308E45 /* ViewModels */,
+				D0751B0229E42C1600308E45 /* Views */,
+				D0751B0129E42C0A00308E45 /* Controllers */,
 				D0751AEC29E4267700308E45 /* Info.plist */,
 			);
 			path = "Articula Inc Task";
+			sourceTree = "<group>";
+		};
+		D0751B0129E42C0A00308E45 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0751B0E29E450C100308E45 /* Core */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D0751B0229E42C1600308E45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0751AE929E4267700308E45 /* LaunchScreen.storyboard */,
+				D0751B1629E4CF9100308E45 /* ChatVC.xib */,
+				D032DD1229E5A48D003FF9E8 /* FriendCell.swift */,
+				D032DD1329E5A48D003FF9E8 /* FriendCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D0751B0329E42C1C00308E45 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0751B0C29E42FA600308E45 /* CallScreenVM.swift */,
+				D0F140BB29E56863008C6BF8 /* DB.swift */,
+				D0F140BD29E56B30008C6BF8 /* AuthVM.swift */,
+				D032DD1929E5E206003FF9E8 /* Network.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D0751B0429E42C2500308E45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0F140C429E57947008C6BF8 /* Friend.swift */,
+				D032DD1B29E5E6C9003FF9E8 /* RtmTokenModel.swift */,
+				D032DD1D29E5E6D7003FF9E8 /* RtcTokenModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0751B0529E42C2E00308E45 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D0F140B529E56741008C6BF8 /* GoogleService-Info.plist */,
+				D0751AE729E4267700308E45 /* Assets.xcassets */,
+				D0751AFF29E42ACD00308E45 /* Constants.swift */,
+				D0751AE029E4267200308E45 /* SceneDelegate.swift */,
+				D0751ADE29E4267200308E45 /* AppDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		D0751B0629E42E6600308E45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0751B0729E42E7100308E45 /* ViewController */,
+				D0751B0A29E42ECB00308E45 /* General.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0751B0729E42E7100308E45 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D0751B0829E42E8100308E45 /* CallScreenExtension.swift */,
+				D0F140C229E57815008C6BF8 /* SignInVCExtension.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D0751B0E29E450C100308E45 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D0751B0F29E450EA00308E45 /* TabBar.swift */,
+				D0751AE229E4267200308E45 /* CallScreenVC.swift */,
+				D0751B1129E4518E00308E45 /* MessagesVC.swift */,
+				D0F140B729E567BA008C6BF8 /* SignInVC.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,15 +231,28 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0751AEF29E4267700308E45 /* Build configuration list for PBXNativeTarget "Articula Inc Task" */;
 			buildPhases = (
+				41831AF5A3CC1C213A97125E /* [CP] Check Pods Manifest.lock */,
 				D0751AD729E4267200308E45 /* Sources */,
 				D0751AD829E4267200308E45 /* Frameworks */,
 				D0751AD929E4267200308E45 /* Resources */,
+				09044E15A06406CE40F86B99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Articula Inc Task";
+			packageProductDependencies = (
+				D0751AF329E4290900308E45 /* AIAEC */,
+				D0751AF529E4290900308E45 /* AINS */,
+				D0751AF729E4290900308E45 /* AudioBeauty */,
+				D0751AF929E4290900308E45 /* DRM */,
+				D0751AFB29E4290900308E45 /* RtcBasic */,
+				D0751AFD29E4290900308E45 /* SpatialAudio */,
+				D0751B1429E4CDC300308E45 /* AgoraChat */,
+				D0F140C029E576E2008C6BF8 /* JGProgressHUD */,
+				D032DD1729E5AA57003FF9E8 /* Kingfisher */,
+			);
 			productName = "Articula Inc Task";
 			productReference = D0751ADB29E4267200308E45 /* Articula Inc Task.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +281,12 @@
 				Base,
 			);
 			mainGroup = D0751AD229E4267100308E45;
+			packageReferences = (
+				D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */,
+				D0751B1329E4CDC300308E45 /* XCRemoteSwiftPackageReference "AgoraChat_iOS" */,
+				D0F140BF29E576E2008C6BF8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				D032DD1629E5AA57003FF9E8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = D0751ADC29E4267200308E45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,36 +301,87 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D032DD1529E5A48D003FF9E8 /* FriendCell.xib in Resources */,
 				D0751AEB29E4267700308E45 /* LaunchScreen.storyboard in Resources */,
+				D0F140B629E56741008C6BF8 /* GoogleService-Info.plist in Resources */,
+				D0751B1729E4CF9100308E45 /* ChatVC.xib in Resources */,
 				D0751AE829E4267700308E45 /* Assets.xcassets in Resources */,
-				D0751AE629E4267200308E45 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09044E15A06406CE40F86B99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41831AF5A3CC1C213A97125E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Articula Inc Task-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0751AD729E4267200308E45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0751AE329E4267200308E45 /* ViewController.swift in Sources */,
+				D0F140BE29E56B30008C6BF8 /* AuthVM.swift in Sources */,
+				D0F140C529E57947008C6BF8 /* Friend.swift in Sources */,
+				D032DD1A29E5E206003FF9E8 /* Network.swift in Sources */,
+				D0751B0B29E42ECB00308E45 /* General.swift in Sources */,
+				D0F140BC29E56863008C6BF8 /* DB.swift in Sources */,
+				D032DD1E29E5E6D7003FF9E8 /* RtcTokenModel.swift in Sources */,
+				D032DD1429E5A48D003FF9E8 /* FriendCell.swift in Sources */,
+				D0751B0929E42E8100308E45 /* CallScreenExtension.swift in Sources */,
+				D0751AE329E4267200308E45 /* CallScreenVC.swift in Sources */,
+				D0751B1029E450EA00308E45 /* TabBar.swift in Sources */,
+				D0F140C329E57815008C6BF8 /* SignInVCExtension.swift in Sources */,
+				D032DD1C29E5E6C9003FF9E8 /* RtmTokenModel.swift in Sources */,
+				D0F140B829E567BA008C6BF8 /* SignInVC.swift in Sources */,
+				D0751B1229E4518E00308E45 /* MessagesVC.swift in Sources */,
 				D0751ADF29E4267200308E45 /* AppDelegate.swift in Sources */,
 				D0751AE129E4267200308E45 /* SceneDelegate.swift in Sources */,
+				D0751B0029E42ACD00308E45 /* Constants.swift in Sources */,
+				D0751B0D29E42FA600308E45 /* CallScreenVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D0751AE429E4267200308E45 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0751AE529E4267200308E45 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D0751AE929E4267700308E45 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +509,7 @@
 		};
 		D0751AF029E4267700308E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EB55FB68AD6CDD1ACA8C251 /* Pods-Articula Inc Task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +520,9 @@
 				INFOPLIST_FILE = "Articula Inc Task/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +538,7 @@
 		};
 		D0751AF129E4267700308E45 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37FC72C16375250EA29A8FEB /* Pods-Articula Inc Task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +549,9 @@
 				INFOPLIST_FILE = "Articula Inc Task/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +587,89 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D032DD1629E5AA57003FF9E8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraAudio_iOS";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		D0751B1329E4CDC300308E45 /* XCRemoteSwiftPackageReference "AgoraChat_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraChat_iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		D0F140BF29E576E2008C6BF8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D032DD1729E5AA57003FF9E8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D032DD1629E5AA57003FF9E8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D0751AF329E4290900308E45 /* AIAEC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = AIAEC;
+		};
+		D0751AF529E4290900308E45 /* AINS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = AINS;
+		};
+		D0751AF729E4290900308E45 /* AudioBeauty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = AudioBeauty;
+		};
+		D0751AF929E4290900308E45 /* DRM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = DRM;
+		};
+		D0751AFB29E4290900308E45 /* RtcBasic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = RtcBasic;
+		};
+		D0751AFD29E4290900308E45 /* SpatialAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751AF229E4290900308E45 /* XCRemoteSwiftPackageReference "AgoraAudio_iOS" */;
+			productName = SpatialAudio;
+		};
+		D0751B1429E4CDC300308E45 /* AgoraChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0751B1329E4CDC300308E45 /* XCRemoteSwiftPackageReference "AgoraChat_iOS" */;
+			productName = AgoraChat;
+		};
+		D0F140C029E576E2008C6BF8 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0F140BF29E576E2008C6BF8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0751AD329E4267100308E45 /* Project object */;
 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="91" id="KGk-i7-Jjw" customClass="FriendCell" customModule="Articula_Inc_Task" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBR-IV-XDo">
+                        <rect key="frame" x="106" y="27" width="158" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-GG-NsR">
+                        <rect key="frame" x="272" y="22.666666666666671" width="64" height="50"/>
+                        <color key="tintColor" red="0.94901973009999996" green="0.94901973009999996" blue="0.94901973009999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="phone.fill" catalog="system">
+                            <backgroundConfiguration key="background">
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                            </backgroundConfiguration>
+                        </buttonConfiguration>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4ud-ly-PG2">
+                        <rect key="frame" x="20" y="16.333333333333329" width="76" height="63"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wBR-IV-XDo" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.44382" id="DNL-LH-6mE"/>
+                    <constraint firstItem="wBR-IV-XDo" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.450549" id="LdL-nP-mWW"/>
+                    <constraint firstItem="4ud-ly-PG2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="O7j-1r-kbH"/>
+                    <constraint firstItem="wBR-IV-XDo" firstAttribute="centerY" secondItem="rsa-GG-NsR" secondAttribute="centerY" id="TWZ-ua-OJU"/>
+                    <constraint firstItem="wBR-IV-XDo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="106" id="WKT-nI-mJs"/>
+                    <constraint firstItem="4ud-ly-PG2" firstAttribute="centerY" secondItem="wBR-IV-XDo" secondAttribute="centerY" id="cTM-nr-KUU"/>
+                    <constraint firstItem="4ud-ly-PG2" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.70696" id="dJf-77-8Ue"/>
+                    <constraint firstItem="rsa-GG-NsR" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.179775" id="eS3-h5-rpq"/>
+                    <constraint firstItem="rsa-GG-NsR" firstAttribute="leading" secondItem="wBR-IV-XDo" secondAttribute="trailing" constant="8" id="kZS-xl-rfD"/>
+                    <constraint firstItem="4ud-ly-PG2" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.213483" id="nO4-ZE-Tsu"/>
+                    <constraint firstItem="rsa-GG-NsR" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.549451" id="rqW-uX-Wst"/>
+                    <constraint firstItem="wBR-IV-XDo" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="2" id="sis-gC-0Ps"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="callButton" destination="rsa-GG-NsR" id="g9g-ab-RPg"/>
+                <outlet property="nameLabel" destination="wBR-IV-XDo" id="FZU-2z-a7V"/>
+                <outlet property="profileImage" destination="4ud-ly-PG2" id="khv-rY-SNh"/>
+            </connections>
+            <point key="canvasLocation" x="73.282442748091597" y="5.2816901408450709"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
