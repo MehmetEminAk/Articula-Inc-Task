@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30F24CA787B400F7DF406989 /* Pods_Articula_Inc_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A28827705E961DAEBC2F7F4 /* Pods_Articula_Inc_Task.framework */; };
+		D030C55129E6B6EF0045AE8A /* MessagesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030C55029E6B6EF0045AE8A /* MessagesExtension.swift */; };
+		D030C55329E6B7AD0045AE8A /* MessagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030C55229E6B7AD0045AE8A /* MessagesVM.swift */; };
+		D030C55529E6CB880045AE8A /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030C55429E6CB880045AE8A /* SettingsVC.swift */; };
 		D032DD1429E5A48D003FF9E8 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D032DD1229E5A48D003FF9E8 /* FriendCell.swift */; };
 		D032DD1529E5A48D003FF9E8 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D032DD1329E5A48D003FF9E8 /* FriendCell.xib */; };
 		D032DD1829E5AA57003FF9E8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D032DD1729E5AA57003FF9E8 /* Kingfisher */; };
@@ -33,6 +35,9 @@
 		D0751B1229E4518E00308E45 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B1129E4518E00308E45 /* MessagesVC.swift */; };
 		D0751B1529E4CDC300308E45 /* AgoraChat in Frameworks */ = {isa = PBXBuildFile; productRef = D0751B1429E4CDC300308E45 /* AgoraChat */; };
 		D0751B1729E4CF9100308E45 /* ChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0751B1629E4CF9100308E45 /* ChatVC.xib */; };
+		D0798DBD29E638BF0033ADD3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DBC29E638BF0033ADD3 /* FirebaseAuth */; };
+		D0798DBF29E638BF0033ADD3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DBE29E638BF0033ADD3 /* FirebaseFirestore */; };
+		D0798DC129E638BF0033ADD3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DC029E638BF0033ADD3 /* FirebaseStorage */; };
 		D0F140B629E56741008C6BF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F140B529E56741008C6BF8 /* GoogleService-Info.plist */; };
 		D0F140B829E567BA008C6BF8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140B729E567BA008C6BF8 /* SignInVC.swift */; };
 		D0F140BC29E56863008C6BF8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140BB29E56863008C6BF8 /* DB.swift */; };
@@ -43,9 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37FC72C16375250EA29A8FEB /* Pods-Articula Inc Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Articula Inc Task.release.xcconfig"; path = "Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task.release.xcconfig"; sourceTree = "<group>"; };
-		6EB55FB68AD6CDD1ACA8C251 /* Pods-Articula Inc Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Articula Inc Task.debug.xcconfig"; path = "Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task.debug.xcconfig"; sourceTree = "<group>"; };
-		9A28827705E961DAEBC2F7F4 /* Pods_Articula_Inc_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Articula_Inc_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D030C55029E6B6EF0045AE8A /* MessagesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesExtension.swift; sourceTree = "<group>"; };
+		D030C55229E6B7AD0045AE8A /* MessagesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVM.swift; sourceTree = "<group>"; };
+		D030C55429E6CB880045AE8A /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		D032DD1229E5A48D003FF9E8 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
 		D032DD1329E5A48D003FF9E8 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
 		D032DD1929E5E206003FF9E8 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -79,45 +84,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0751AFE29E4290900308E45 /* SpatialAudio in Frameworks */,
+				D0798DBD29E638BF0033ADD3 /* FirebaseAuth in Frameworks */,
 				D0751AF829E4290900308E45 /* AudioBeauty in Frameworks */,
 				D0751AF429E4290900308E45 /* AIAEC in Frameworks */,
 				D0751AFA29E4290900308E45 /* DRM in Frameworks */,
+				D0798DC129E638BF0033ADD3 /* FirebaseStorage in Frameworks */,
 				D032DD1829E5AA57003FF9E8 /* Kingfisher in Frameworks */,
 				D0751AF629E4290900308E45 /* AINS in Frameworks */,
 				D0751AFC29E4290900308E45 /* RtcBasic in Frameworks */,
 				D0751B1529E4CDC300308E45 /* AgoraChat in Frameworks */,
+				D0798DBF29E638BF0033ADD3 /* FirebaseFirestore in Frameworks */,
 				D0F140C129E576E2008C6BF8 /* JGProgressHUD in Frameworks */,
-				30F24CA787B400F7DF406989 /* Pods_Articula_Inc_Task.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D622C60B512AAB39ABC90B7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6EB55FB68AD6CDD1ACA8C251 /* Pods-Articula Inc Task.debug.xcconfig */,
-				37FC72C16375250EA29A8FEB /* Pods-Articula Inc Task.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		C091DD9708ED6CBFC727FC0B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9A28827705E961DAEBC2F7F4 /* Pods_Articula_Inc_Task.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		D0751AD229E4267100308E45 = {
 			isa = PBXGroup;
 			children = (
 				D0751ADD29E4267200308E45 /* Articula Inc Task */,
 				D0751ADC29E4267200308E45 /* Products */,
-				4D622C60B512AAB39ABC90B7 /* Pods */,
-				C091DD9708ED6CBFC727FC0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +157,7 @@
 				D0F140BB29E56863008C6BF8 /* DB.swift */,
 				D0F140BD29E56B30008C6BF8 /* AuthVM.swift */,
 				D032DD1929E5E206003FF9E8 /* Network.swift */,
+				D030C55229E6B7AD0045AE8A /* MessagesVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -209,6 +198,7 @@
 			children = (
 				D0751B0829E42E8100308E45 /* CallScreenExtension.swift */,
 				D0F140C229E57815008C6BF8 /* SignInVCExtension.swift */,
+				D030C55029E6B6EF0045AE8A /* MessagesExtension.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -220,6 +210,7 @@
 				D0751AE229E4267200308E45 /* CallScreenVC.swift */,
 				D0751B1129E4518E00308E45 /* MessagesVC.swift */,
 				D0F140B729E567BA008C6BF8 /* SignInVC.swift */,
+				D030C55429E6CB880045AE8A /* SettingsVC.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -231,11 +222,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0751AEF29E4267700308E45 /* Build configuration list for PBXNativeTarget "Articula Inc Task" */;
 			buildPhases = (
-				41831AF5A3CC1C213A97125E /* [CP] Check Pods Manifest.lock */,
 				D0751AD729E4267200308E45 /* Sources */,
 				D0751AD829E4267200308E45 /* Frameworks */,
 				D0751AD929E4267200308E45 /* Resources */,
-				09044E15A06406CE40F86B99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +241,9 @@
 				D0751B1429E4CDC300308E45 /* AgoraChat */,
 				D0F140C029E576E2008C6BF8 /* JGProgressHUD */,
 				D032DD1729E5AA57003FF9E8 /* Kingfisher */,
+				D0798DBC29E638BF0033ADD3 /* FirebaseAuth */,
+				D0798DBE29E638BF0033ADD3 /* FirebaseFirestore */,
+				D0798DC029E638BF0033ADD3 /* FirebaseStorage */,
 			);
 			productName = "Articula Inc Task";
 			productReference = D0751ADB29E4267200308E45 /* Articula Inc Task.app */;
@@ -286,6 +278,7 @@
 				D0751B1329E4CDC300308E45 /* XCRemoteSwiftPackageReference "AgoraChat_iOS" */,
 				D0F140BF29E576E2008C6BF8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 				D032DD1629E5AA57003FF9E8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D0798DBB29E638BF0033ADD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D0751ADC29E4267200308E45 /* Products */;
 			projectDirPath = "";
@@ -311,48 +304,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		09044E15A06406CE40F86B99 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Articula Inc Task/Pods-Articula Inc Task-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41831AF5A3CC1C213A97125E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Articula Inc Task-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D0751AD729E4267200308E45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -360,8 +311,10 @@
 			files = (
 				D0F140BE29E56B30008C6BF8 /* AuthVM.swift in Sources */,
 				D0F140C529E57947008C6BF8 /* Friend.swift in Sources */,
+				D030C55329E6B7AD0045AE8A /* MessagesVM.swift in Sources */,
 				D032DD1A29E5E206003FF9E8 /* Network.swift in Sources */,
 				D0751B0B29E42ECB00308E45 /* General.swift in Sources */,
+				D030C55129E6B6EF0045AE8A /* MessagesExtension.swift in Sources */,
 				D0F140BC29E56863008C6BF8 /* DB.swift in Sources */,
 				D032DD1E29E5E6D7003FF9E8 /* RtcTokenModel.swift in Sources */,
 				D032DD1429E5A48D003FF9E8 /* FriendCell.swift in Sources */,
@@ -376,6 +329,7 @@
 				D0751AE129E4267200308E45 /* SceneDelegate.swift in Sources */,
 				D0751B0029E42ACD00308E45 /* Constants.swift in Sources */,
 				D0751B0D29E42FA600308E45 /* CallScreenVM.swift in Sources */,
+				D030C55529E6CB880045AE8A /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +463,6 @@
 		};
 		D0751AF029E4267700308E45 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EB55FB68AD6CDD1ACA8C251 /* Pods-Articula Inc Task.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,7 +491,6 @@
 		};
 		D0751AF129E4267700308E45 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37FC72C16375250EA29A8FEB /* Pods-Articula Inc Task.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -613,6 +565,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		D0798DBB29E638BF0033ADD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D0F140BF29E576E2008C6BF8 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
@@ -663,6 +623,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D0751B1329E4CDC300308E45 /* XCRemoteSwiftPackageReference "AgoraChat_iOS" */;
 			productName = AgoraChat;
+		};
+		D0798DBC29E638BF0033ADD3 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0798DBB29E638BF0033ADD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D0798DBE29E638BF0033ADD3 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0798DBB29E638BF0033ADD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D0798DC029E638BF0033ADD3 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D0798DBB29E638BF0033ADD3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		D0F140C029E576E2008C6BF8 /* JGProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -17,9 +17,15 @@ class TabBar: UITabBarController {
         let messagesVC = MessagesVC()
         messagesVC.tabBarItem = UITabBarItem(title: "Messages", image: UIImage(systemName: "message"), tag: 1)
         
-        tabBar.tintColor = .white
+        let settingsVC = SettingsVC()
+        settingsVC.modalPresentationStyle = .fullScreen
+        settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
+        let settingsNavigationController = UINavigationController(rootViewController: settingsVC)
         
-        setViewControllers([voiceCallingVC,messagesVC], animated: true)
+        
+        tabBar.tintColor = .systemTeal
+        
+        setViewControllers([voiceCallingVC,messagesVC,settingsNavigationController], animated: true)
         
     }
    

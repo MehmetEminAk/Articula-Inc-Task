@@ -17,16 +17,18 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
     
     func leaveChannel() {
        
-        let result = engine.leaveChannel()
+        engine.leaveChannel()
         
         
     }
+    @available(iOS 13.0.0, *)
     func joinChannel() async {
         
         
     }
     
     
+    @available(iOS 13.0.0, *)
     func checkForPermissions() async -> Bool {
        
         
@@ -34,6 +36,7 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
         return hasPermissions
     }
     
+    @available(iOS 13.0.0, *)
     func avAuthorization(mediaType: AVMediaType) async -> Bool {
         let mediaAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: mediaType)
         switch mediaAuthorizationStatus {
@@ -68,7 +71,7 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
         friendsTable.register(UINib(nibName: "FriendCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         friendsTable.delegate = self
         friendsTable.dataSource = self
-        view.addSubViews([friendsTable])
+        view.addSubViews([friendsTable,headerLabel])
         viewModel.fetchCurrentUserFriends()
         
     }
@@ -102,8 +105,28 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
         print("Other user joined")
     }
     
-    func rtcEngine(_ engine: AgoraRtcEngineKit, didReceive event: AgoraChannelMediaRelayEvent) {
+ 
+    
+    
+    func presentIncomingCall(sourceUserId: String, channel: String, token: String) {
+        self.generateAlert(errTitle: "Ringing", errMsg: "\(sourceUserId) is calling you. Do you want to answer?" , actions: [UIAlertAction(title: "NO", style: .cancel), UIAlertAction(title: "YES", style: .default , handler: { act in
+            
+            print(token)
+            self.engine.joinChannel(byToken: token, channelId: channel, info: nil, uid: 0) { _, _, _ in
+                self.engine.setEnableSpeakerphone(true)
+            }
+        })])
         
     }
+    
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
+        print("Local user is in the channel")
+    }
+    
+    
+    
+    
+    
+    
 }
     

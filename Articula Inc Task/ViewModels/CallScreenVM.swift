@@ -10,6 +10,7 @@ import FirebaseAuth
 
 protocol CallScreenDelegate : AnyObject {
     func updateUI()
+    func presentIncomingCall(sourceUserId : String , channel : String , token : String)
 }
 
 
@@ -19,13 +20,15 @@ class CallScreenVM {
     
     var friends : [Friend] = []
     
+    let currentUserId = Auth.auth().currentUser!.uid
+    
     let db = DB.shared.firebase
     
     func fetchCurrentUserFriends(){
         
-        let userId = Auth.auth().currentUser?.uid
         
-        db.collection("Users").document(userId!).collection("Friends").getDocuments { snapshot, error in
+        
+        db.collection("Users").document(currentUserId).collection("Friends").getDocuments { snapshot, error in
             if error != nil {
                 print(error!.localizedDescription)
             }else {
@@ -45,7 +48,39 @@ class CallScreenVM {
         }
     }
     
-    func noticeTargetUser(id : String , channel : String) {
+    func trackIncomingCalls() {
+        db.collection("Callings").document(currentUserId).collection("incomingCalls").addSnapshotListener { snapShot, err in
+            
+            
+            
+                
+                
+                print(isFirstControl)
+                if !isFirstControl {
+                    print(isFirstControl)
+                    let doc = snapShot?.documentChanges.last
+                    let channel = doc!.document.data()["channel"] as! String
+                    let token = doc!.document.data()["token"] as! String
+                    
+                    let sourcePersonId = doc!.document.data()["sourcePersonId"] as! String
+                    print(doc?.document.data()["token"])
+                    
+                    
+                    
+                    self.delegate?.presentIncomingCall(sourceUserId: sourcePersonId, channel: channel, token: token)
+                }
+                
+                
+            
+            
+        }
+    }
+    
+    func callTheUser(targetId : String , channel : String , targetUserToken : String){
+        
+        
+        
+        db.collection("Callings").document(targetId).collection("incomingCalls").addDocument(data: ["channel" : channel , "sourcePersonId" : currentUserId , "token" : targetUserToken])
         
     }
     
@@ -54,7 +89,7 @@ class CallScreenVM {
         
         
         
-       var (result,error)  = await Network.shared.requestToApi(request: request, expectingType: RtcTokenModel.self)
+       let (result,error)  = await Network.shared.requestToApi(request: request, expectingType: RtcTokenModel.self)
         
         return (result,error)
         

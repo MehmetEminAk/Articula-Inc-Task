@@ -38,9 +38,9 @@ class Network {
         do {
             let (data,_) = await try session.data(for: request as! URLRequest)
             
-            
             do {
-                    result = try JSONDecoder().decode(T.self, from: data)
+                
+                result = try JSONDecoder().decode(T.self, from: data)
                 } catch {
                     err = error
                 }
