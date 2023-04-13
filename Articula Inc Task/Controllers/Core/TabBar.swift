@@ -22,7 +22,8 @@ class TabBar: UITabBarController {
         settingsVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         let settingsNavigationController = UINavigationController(rootViewController: settingsVC)
         
-        
+        let allUsersVC = AllUsersVC()
+        allUsersVC.tabBarItem = UITabBarItem(title: "Users", image: UIImage(systemName: "person.circle"), tag: 3)
         tabBar.tintColor = .systemTeal
         
         setViewControllers([voiceCallingVC,messagesVC,settingsNavigationController], animated: true)

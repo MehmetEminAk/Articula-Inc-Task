@@ -14,6 +14,9 @@ class MessagesVC: UIViewController , MessagesDelegate{
     
     var viewModel = MessagesVM()
     
+    var synthesizer = AVSpeechSynthesizer()
+    
+    
     var speechRecognizer : SFSpeechRecognizer!
     
     var audioEngine : AVAudioEngine!

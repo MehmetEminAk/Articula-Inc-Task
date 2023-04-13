@@ -21,11 +21,7 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
         
         
     }
-    @available(iOS 13.0.0, *)
-    func joinChannel() async {
-        
-        
-    }
+   
     
     
     @available(iOS 13.0.0, *)
@@ -64,6 +60,7 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
         engine.setChannelProfile(.communication)
         engine.enableAudio()
         engine.disableVideo()
+        engine.adjustAudioMixingVolume(12)
     }
     
    
@@ -71,11 +68,17 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
         friendsTable.register(UINib(nibName: "FriendCell", bundle: nil), forCellReuseIdentifier: "friendCell")
         friendsTable.delegate = self
         friendsTable.dataSource = self
-        view.addSubViews([friendsTable,headerLabel])
+        view.addSubViews([friendsTable,headerLabel,closeTheCalBtn])
         viewModel.fetchCurrentUserFriends()
+        closeTheCalBtn.addTarget(self, action: #selector(terminateTheCall), for: .touchUpInside)
         
     }
    
+    @objc
+    func terminateTheCall(){
+        leaveChannel()
+        self.closeTheCalBtn.isHidden = true
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -84,7 +87,7 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = friendsTable.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as! FriendCell
-        cell.callButton.addTarget(self, action: #selector(initCallBtnClicked), for: .touchUpInside)
+        cell.callButton.addTarget(self, action: #selector(initCallBtnClicked(_:)), for: .touchUpInside)
         cell.callButton.tag = indexPath.row
         
         let profileImageUrl = URL(string: viewModel.friends[indexPath.row].friendProfileImage)
@@ -103,24 +106,33 @@ extension CallScreenVC : AgoraRtcEngineDelegate , UITableViewDelegate , UITableV
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
         print("Other user joined")
+        
     }
     
  
     
     
-    func presentIncomingCall(sourceUserId: String, channel: String, token: String) {
-        self.generateAlert(errTitle: "Ringing", errMsg: "\(sourceUserId) is calling you. Do you want to answer?" , actions: [UIAlertAction(title: "NO", style: .cancel), UIAlertAction(title: "YES", style: .default , handler: { act in
+    
+    func presentIncomingCall(sourceUserId: String, channel: String, token: String) async {
+        
+        await checkForPermissions()
+        
+        self.generateAlert(errTitle: "Ringing", errMsg: "\(sourceUserId) is calling you. Do you want to answer?" , actions: [UIAlertAction(title: "YES", style: .default , handler: { act in
             
-            print(token)
+           
+            
+            
             self.engine.joinChannel(byToken: token, channelId: channel, info: nil, uid: 0) { _, _, _ in
                 self.engine.setEnableSpeakerphone(true)
+                print("Other user is on the line")
             }
-        })])
+        }),UIAlertAction(title: "NO", style: .cancel)])
         
     }
     
     func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
         print("Local user is in the channel")
+        
     }
     
     

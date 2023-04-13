@@ -10,7 +10,7 @@ import FirebaseAuth
 
 protocol CallScreenDelegate : AnyObject {
     func updateUI()
-    func presentIncomingCall(sourceUserId : String , channel : String , token : String)
+    func presentIncomingCall(sourceUserId : String , channel : String , token : String) async
 }
 
 
@@ -55,32 +55,38 @@ class CallScreenVM {
             
                 
                 
-                print(isFirstControl)
-                if !isFirstControl {
-                    print(isFirstControl)
+    
+                
                     let doc = snapShot?.documentChanges.last
-                    let channel = doc!.document.data()["channel"] as! String
-                    let token = doc!.document.data()["token"] as! String
+                    print(doc?.document.data())
+                    let channel = doc?.document.data()["channel"] as? String
+                    let token = doc?.document.data()["token"] as? String
                     
-                    let sourcePersonId = doc!.document.data()["sourcePersonId"] as! String
+            
+            print(channel)
+                    let sourcePersonId = doc?.document.data()["sourcePersonId"] as? String
                     print(doc?.document.data()["token"])
                     
+                    guard let _ = doc  else{
+                        return
+                    }
+            Task {
+                await self.delegate?.presentIncomingCall(sourceUserId: sourcePersonId!, channel: channel!, token: token!)
+
+            }
                     
-                    
-                    self.delegate?.presentIncomingCall(sourceUserId: sourcePersonId, channel: channel, token: token)
-                }
-                
-                
+               
             
             
         }
     }
     
-    func callTheUser(targetId : String , channel : String , targetUserToken : String){
+    func callTheUser(targetId : String , channel : String , targetUserToken : String) async {
         
+       
         
+       await  db.collection("Callings").document(targetId).collection("incomingCalls").addDocument(data: ["channel" : channel , "sourcePersonId" : currentUserId , "token" : targetUserToken])
         
-        db.collection("Callings").document(targetId).collection("incomingCalls").addDocument(data: ["channel" : channel , "sourcePersonId" : currentUserId , "token" : targetUserToken])
         
     }
     

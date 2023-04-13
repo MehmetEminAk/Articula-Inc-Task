@@ -38,6 +38,9 @@
 		D0798DBD29E638BF0033ADD3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DBC29E638BF0033ADD3 /* FirebaseAuth */; };
 		D0798DBF29E638BF0033ADD3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DBE29E638BF0033ADD3 /* FirebaseFirestore */; };
 		D0798DC129E638BF0033ADD3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DC029E638BF0033ADD3 /* FirebaseStorage */; };
+		D0CD0ADF29E8046D00F066CC /* AllUsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD0ADE29E8046D00F066CC /* AllUsersVC.swift */; };
+		D0CD0AE129E804CD00F066CC /* AllUsersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD0AE029E804CD00F066CC /* AllUsersExtension.swift */; };
+		D0CD0AE329E8179200F066CC /* AgoraChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD0AE229E8179200F066CC /* AgoraChat.swift */; };
 		D0F140B629E56741008C6BF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0F140B529E56741008C6BF8 /* GoogleService-Info.plist */; };
 		D0F140B829E567BA008C6BF8 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140B729E567BA008C6BF8 /* SignInVC.swift */; };
 		D0F140BC29E56863008C6BF8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F140BB29E56863008C6BF8 /* DB.swift */; };
@@ -70,6 +73,9 @@
 		D0751B0F29E450EA00308E45 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D0751B1129E4518E00308E45 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		D0751B1629E4CF9100308E45 /* ChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatVC.xib; sourceTree = "<group>"; };
+		D0CD0ADE29E8046D00F066CC /* AllUsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersVC.swift; sourceTree = "<group>"; };
+		D0CD0AE029E804CD00F066CC /* AllUsersExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersExtension.swift; sourceTree = "<group>"; };
+		D0CD0AE229E8179200F066CC /* AgoraChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraChat.swift; sourceTree = "<group>"; };
 		D0F140B529E56741008C6BF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0F140B729E567BA008C6BF8 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		D0F140BB29E56863008C6BF8 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 				D0F140BD29E56B30008C6BF8 /* AuthVM.swift */,
 				D032DD1929E5E206003FF9E8 /* Network.swift */,
 				D030C55229E6B7AD0045AE8A /* MessagesVM.swift */,
+				D0CD0AE229E8179200F066CC /* AgoraChat.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -197,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D0751B0829E42E8100308E45 /* CallScreenExtension.swift */,
+				D0CD0AE029E804CD00F066CC /* AllUsersExtension.swift */,
 				D0F140C229E57815008C6BF8 /* SignInVCExtension.swift */,
 				D030C55029E6B6EF0045AE8A /* MessagesExtension.swift */,
 			);
@@ -211,6 +219,7 @@
 				D0751B1129E4518E00308E45 /* MessagesVC.swift */,
 				D0F140B729E567BA008C6BF8 /* SignInVC.swift */,
 				D030C55429E6CB880045AE8A /* SettingsVC.swift */,
+				D0CD0ADE29E8046D00F066CC /* AllUsersVC.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -320,15 +329,18 @@
 				D032DD1429E5A48D003FF9E8 /* FriendCell.swift in Sources */,
 				D0751B0929E42E8100308E45 /* CallScreenExtension.swift in Sources */,
 				D0751AE329E4267200308E45 /* CallScreenVC.swift in Sources */,
+				D0CD0ADF29E8046D00F066CC /* AllUsersVC.swift in Sources */,
 				D0751B1029E450EA00308E45 /* TabBar.swift in Sources */,
 				D0F140C329E57815008C6BF8 /* SignInVCExtension.swift in Sources */,
 				D032DD1C29E5E6C9003FF9E8 /* RtmTokenModel.swift in Sources */,
 				D0F140B829E567BA008C6BF8 /* SignInVC.swift in Sources */,
+				D0CD0AE129E804CD00F066CC /* AllUsersExtension.swift in Sources */,
 				D0751B1229E4518E00308E45 /* MessagesVC.swift in Sources */,
 				D0751ADF29E4267200308E45 /* AppDelegate.swift in Sources */,
 				D0751AE129E4267200308E45 /* SceneDelegate.swift in Sources */,
 				D0751B0029E42ACD00308E45 /* Constants.swift in Sources */,
 				D0751B0D29E42FA600308E45 /* CallScreenVM.swift in Sources */,
+				D0CD0AE329E8179200F066CC /* AgoraChat.swift in Sources */,
 				D030C55529E6CB880045AE8A /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +488,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,6 +517,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

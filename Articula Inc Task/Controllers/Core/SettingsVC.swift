@@ -28,6 +28,7 @@ class SettingsVC: UIViewController {
             
                 Task {
                     await AgoraChatClient.shared().logout(false)
+                    UserDefaults.standard.set(nil, forKey: "agoraCurrentUserId")
                 }
             let authVC = SignInVC()
                 authVC.modalPresentationStyle = .fullScreen

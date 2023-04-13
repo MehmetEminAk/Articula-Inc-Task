@@ -6,19 +6,17 @@
 //
 
 import Foundation
-import AgoraChat
 import AVFAudio
 import Speech
 import AVFoundation
+import AgoraChat
 
 
-extension MessagesVC : AgoraChatManagerDelegate {
+extension MessagesVC : AgoraChatManagerDelegate, AVSpeechSynthesizerDelegate {
     func initChatSdk() async {
         
-        let rtmKitOptions = AgoraChatOptions(appkey: agoraChatAppKey)
-        
-        AgoraChatClient.shared().initializeSDK(with: rtmKitOptions)
         AgoraChatClient.shared().chatManager?.add(self, delegateQueue: nil)
+        
     }
     
     func configVoiceOperations(){
@@ -30,7 +28,7 @@ extension MessagesVC : AgoraChatManagerDelegate {
     @objc
     func micButtonClicked(){
         guard let speechRecognizer = speechRecognizer, speechRecognizer.isAvailable else {
-            self.generateAlert(errTitle: "ERROR!", errMsg: "If you want to use this app you must give the permission")
+            self.generateAlert(errTitle: "ERROR!", errMsg: "This feature is not available in this device")
                return
            }
            
@@ -58,7 +56,7 @@ extension MessagesVC : AgoraChatManagerDelegate {
     func printLog(_ log : Any...){
         DispatchQueue.main.async {
             self.chatLogs.text.append(
-                DateFormatter.localizedString(from: .now, dateStyle: .none, timeStyle: .medium) + " : " + String(reflecting: log)
+                DateFormatter.localizedString(from: .now, dateStyle: .none, timeStyle: .medium) + " : " + String(reflecting: log) + "\n"
             )
         
             self.chatLogs.scrollRangeToVisible(NSRange(location: self.chatLogs.text.count, length: 1))
@@ -128,12 +126,11 @@ extension MessagesVC : AgoraChatManagerDelegate {
     
     func sendMessage(targetUserId : String, message : String){
         
+        
+        
         let msg = AgoraChatMessage(conversationId: targetUserId, from: agoraCurrentUserId, to: targetUserId, body: .text(content: message), ext: nil)
+       
         
-        
-        print(msg.swiftBody)
-        print(msg.chatType)
-        print(msg.to)
         AgoraChatClient.shared().chatManager?.send(msg, progress: nil,completion: { _, err in
             if err != nil {
                 self.printLog("error! \(err!.errorDescription) \n")
@@ -160,24 +157,30 @@ extension MessagesVC : AgoraChatManagerDelegate {
     }
     
     func speakMessage(_ message: String) {
-        let synthesizer = AVSpeechSynthesizer()
+       
+       
+        print(AVSpeechSynthesisVoice.speechVoices())
         
         let utterance = AVSpeechUtterance(string: message)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US") 
+        utterance.voice = AVSpeechSynthesisVoice(language: "tr-TR")
+        utterance.volume = 1.0
+    
         
         synthesizer.speak(utterance)
+        print(synthesizer.isSpeaking)
     }
     
     func loginAgoraChat() async {
         
-        let (result,error) = await viewModel.getCurrentUserToken()
+            let (result,error) = await viewModel.getCurrentUserToken()
         
-        if error != nil {
+            if error != nil {
             print(error!.localizedDescription)
         }else if let _ = result {
             
             let token = result!.token
-            let (_,error) = await AgoraChatClient.shared().login(withUsername: "deneme1", agoraToken: token)
+            print(agoraCurrentUserId)
+            let (_,error) = await AgoraChatClient.shared().login(withUsername: agoraCurrentUserId, agoraToken: token)
             
             if error != nil {
                 print(error?.errorDescription)

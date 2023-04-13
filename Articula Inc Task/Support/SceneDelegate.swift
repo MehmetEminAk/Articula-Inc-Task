@@ -22,6 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if Auth.auth().currentUser != nil {
             
+            let email = Auth.auth().currentUser?.email?.split(separator: "@")
+            
+            var agoraChatUserId = email![0] + email![1]
+            UserDefaults.standard.set(agoraChatUserId, forKey: "agoraCurrentUserId")
+            
             window?.rootViewController = TabBar()
             
         }else {

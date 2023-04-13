@@ -7,12 +7,16 @@
 
 import Foundation
 import UIKit
+import AgoraChat
+
 
 extension SignInVC {
     func configObjects(){
         toogleSingInBtn.addTarget(self, action: #selector(changeState), for: .touchUpInside)
         signUp_InBtn.addTarget(self, action: #selector(authOperation), for: .touchUpInside)
     }
+    
+   
     
     @objc func changeState(){
         self.isSignInPage.toggle()
@@ -29,39 +33,82 @@ extension SignInVC {
         }
     }
     
+    
+    
     @objc
-    func authOperation(){
+    func authOperation()  {
         
         hud.show(in: view)
         
+        guard let email = emailTF.text, let password = passwordTF.text else {
+            return
+        }
+        
         if isSignInPage {
-            viewModel.signIn(email: emailTF.text!, password: passwordTF.text!) { result, error in
+            viewModel.signIn(email: email, password: password) { result, error in
+                
+                self.hud.dismiss(animated: true)
+                if error != nil {
+                    
+                    
+                    
+                    
+                    self.generateAlert(errTitle: "ERROR!", errMsg: error!.localizedDescription,actions: [UIAlertAction(title: "OK", style: .cancel)])
+                }else {
+                    
+                    let email = email.split(separator: "@")
+                    var agoraChatUserId = email[0] + email[1]
+                    UserDefaults.standard.set(agoraChatUserId, forKey: "agoraCurrentUserId")
+                    print(UserDefaults.standard.string(forKey: "agoraCurrentUserId"))
+                    
+                    
+                    let tabBarVC = TabBar()
+                    tabBarVC.modalPresentationStyle = .fullScreen
+                    self.present(tabBarVC, animated: true)
+                }
+                
+            }
+        }
+        
+        //If the user is signing up this else block will be execute
+        else {
+            
+            guard let email = emailTF.text, let password = passwordTF.text else {
+                return
+            }
+            
+            viewModel.signUp(email: email, password: password) { result, error in
                 
                 self.hud.dismiss(animated: true)
                 if error != nil {
                     
                     self.generateAlert(errTitle: "ERROR!", errMsg: error!.localizedDescription,actions: [UIAlertAction(title: "OK", style: .cancel)])
                 }else {
-                    let tabBarVC = TabBar()
-                    tabBarVC.modalPresentationStyle = .fullScreen
-                    self.present(tabBarVC, animated: true)
+                    let email = email.split(separator: "@")
+                    
+                    var agoraChatUserId = email[0] + email[1]
+                    UserDefaults.standard.set(agoraChatUserId, forKey: "agoraCurrentUserId")
+                    
+                    print(UserDefaults.standard.string(forKey: "agoraCurrentUserId"))
+                    let agoraChatUserIdd = String(agoraChatUserId)
+                    print(agoraChatUserId)
+                    
+                    AgoraChat.shared.client.register(withUsername: String(agoraChatUserId), password: password) { _, err in
+                        if err != nil {
+                            self.generateAlert(errTitle: "ERROR!\(err!.code.rawValue)", errMsg: err!.errorDescription , actions: [UIAlertAction(title: "OK", style: .cancel)])
+                        }else {
+                            let tabBarVC = TabBar()
+                            tabBarVC.modalPresentationStyle = .fullScreen
+                            self.present(tabBarVC, animated: true)
+                        }
+                    }
+                    
+                    
                 }
                 
             }
-        }else {
-            viewModel.signUp(email: emailTF.text!, password: passwordTF.text!) { result, error in
-                
-                self.hud.dismiss(animated: true)
-                
-                if error != nil {
-                    self.generateAlert(errTitle: "ERROR!", errMsg: error!.localizedDescription,actions: [UIAlertAction(title: "OK", style: .cancel)])
-                }else {
-                    let tabBarVC = TabBar()
-                    tabBarVC.modalPresentationStyle = .fullScreen
-                    self.present(tabBarVC, animated: true)
-                }
-                
-            }
+            
+           
         }
     }
 }

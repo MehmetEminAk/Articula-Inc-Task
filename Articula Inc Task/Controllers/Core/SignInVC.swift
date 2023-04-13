@@ -69,6 +69,7 @@ class SignInVC: UIViewController {
         view.backgroundColor = .white
         view.addSubViews([headerLabel,emailTF,passwordTF,signUp_InBtn,toogleSingInBtn])
         configObjects()
+        
         toogleSingInBtn.setTitle("Don't have an account? Sign up", for: .normal)
         
     }

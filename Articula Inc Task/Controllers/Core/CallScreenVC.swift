@@ -8,6 +8,7 @@
 import UIKit
 import AgoraRtcKit
 import FirebaseAuth
+import AgoraChat
 
 class CallScreenVC: UIViewController {
 
@@ -25,7 +26,17 @@ class CallScreenVC: UIViewController {
         return table
     }()
     
-    
+    var closeTheCalBtn : UIButton = {
+        
+        let btn = UIButton(frame: CGRect(x: deviceWidth * 0.4, y: deviceHeight * 0.8, width: deviceWidth * 0.2, height: 50))
+        btn.backgroundColor = .systemRed
+        btn.layer.cornerRadius = 15
+        btn.setTitle("End Call", for: .normal)
+        btn.layer.borderWidth = 2
+        btn.layer.borderColor = UIColor.white.cgColor
+        btn.isHidden = true
+        return btn
+    }()
     
     
     var engine :  AgoraRtcEngineKit!
@@ -36,28 +47,23 @@ class CallScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+        
+        
         viewModel.delegate = self
         configFriendsTable()
         initializeAgoraEngine()
         viewModel.trackIncomingCalls()
         
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
-            isFirstControl = false
-        })
-    }
-    
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        leaveChannel()
-        DispatchQueue.global(qos: .userInitiated).async {
-            AgoraRtcEngineKit.destroy()
-        }
+        
         
     }
+    
+    
+  
+    
+    
+    
     
     @objc
     func initCallBtnClicked(_ sender : UIButton){
@@ -93,11 +99,20 @@ class CallScreenVC: UIViewController {
             }else if result != nil {
                 
                
-                engine.joinChannel(byToken: result!.token, channelId: result!.channel, info: nil, uid: 0) { _, _, _ in
+                engine.joinChannel(byToken: result!.token, channelId: result!.channel, info: nil, uid: 0) { a, b, c in
                         
                     self.engine.setEnableSpeakerphone(true)
+                    print("Succesfully joined the channel")
+                    self.closeTheCalBtn.isHidden = false
                     
-                    self.viewModel.callTheUser(targetId: targetUserId, channel: channelName , targetUserToken : targetUserResult!.token)
+                    print(result?.token == targetUserResult?.token)
+                    print(channelName)
+                    print(a)
+                    print(b)
+                    print(c)
+                    Task {
+                        await self.viewModel.callTheUser(targetId: targetUserId, channel: channelName , targetUserToken : targetUserResult!.token)
+                    }
                     
                     
                 }

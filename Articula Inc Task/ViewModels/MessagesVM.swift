@@ -20,7 +20,9 @@ class MessagesVM {
     
     func getCurrentUserToken() async -> (RtmTokenModel?,Error?){
         
+        print(agoraCurrentUserId)
         let request =  Network.shared.generateRequest(operationType: .generateRtmToken, parameters: ["user" : agoraCurrentUserId , "expiration" : 3600])
+        
         
         let (result,error) = await Network.shared.requestToApi(request: request, expectingType: RtmTokenModel.self)
         

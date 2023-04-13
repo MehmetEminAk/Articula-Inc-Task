@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseCore
-
+import AgoraRtcKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,9 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            AgoraRtcEngineKit.destroy()
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        AgoraChat.shared
         return true
     }
 
