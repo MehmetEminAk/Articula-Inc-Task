@@ -34,7 +34,6 @@
 		D0751B1029E450EA00308E45 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B0F29E450EA00308E45 /* TabBar.swift */; };
 		D0751B1229E4518E00308E45 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0751B1129E4518E00308E45 /* MessagesVC.swift */; };
 		D0751B1529E4CDC300308E45 /* AgoraChat in Frameworks */ = {isa = PBXBuildFile; productRef = D0751B1429E4CDC300308E45 /* AgoraChat */; };
-		D0751B1729E4CF9100308E45 /* ChatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0751B1629E4CF9100308E45 /* ChatVC.xib */; };
 		D0798DBD29E638BF0033ADD3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DBC29E638BF0033ADD3 /* FirebaseAuth */; };
 		D0798DBF29E638BF0033ADD3 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DBE29E638BF0033ADD3 /* FirebaseFirestore */; };
 		D0798DC129E638BF0033ADD3 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = D0798DC029E638BF0033ADD3 /* FirebaseStorage */; };
@@ -72,7 +71,6 @@
 		D0751B0C29E42FA600308E45 /* CallScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallScreenVM.swift; sourceTree = "<group>"; };
 		D0751B0F29E450EA00308E45 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D0751B1129E4518E00308E45 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
-		D0751B1629E4CF9100308E45 /* ChatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatVC.xib; sourceTree = "<group>"; };
 		D0CD0ADE29E8046D00F066CC /* AllUsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersVC.swift; sourceTree = "<group>"; };
 		D0CD0AE029E804CD00F066CC /* AllUsersExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersExtension.swift; sourceTree = "<group>"; };
 		D0CD0AE229E8179200F066CC /* AgoraChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgoraChat.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				D0751AE929E4267700308E45 /* LaunchScreen.storyboard */,
-				D0751B1629E4CF9100308E45 /* ChatVC.xib */,
 				D032DD1229E5A48D003FF9E8 /* FriendCell.swift */,
 				D032DD1329E5A48D003FF9E8 /* FriendCell.xib */,
 			);
@@ -306,7 +303,6 @@
 				D032DD1529E5A48D003FF9E8 /* FriendCell.xib in Resources */,
 				D0751AEB29E4267700308E45 /* LaunchScreen.storyboard in Resources */,
 				D0F140B629E56741008C6BF8 /* GoogleService-Info.plist in Resources */,
-				D0751B1729E4CF9100308E45 /* ChatVC.xib in Resources */,
 				D0751AE829E4267700308E45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

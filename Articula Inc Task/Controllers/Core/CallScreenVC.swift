@@ -28,10 +28,10 @@ class CallScreenVC: UIViewController {
     
     var closeTheCalBtn : UIButton = {
         
-        let btn = UIButton(frame: CGRect(x: deviceWidth * 0.4, y: deviceHeight * 0.8, width: deviceWidth * 0.2, height: 50))
+        let btn = UIButton(frame: CGRect(x: deviceWidth * 0.3, y: deviceHeight * 0.8, width: deviceWidth * 0.4, height: 50))
         btn.backgroundColor = .systemRed
         btn.layer.cornerRadius = 15
-        btn.setTitle("End Call", for: .normal)
+        btn.setTitle("Terminate Call", for: .normal)
         btn.layer.borderWidth = 2
         btn.layer.borderColor = UIColor.white.cgColor
         btn.isHidden = true
@@ -56,74 +56,7 @@ class CallScreenVC: UIViewController {
         viewModel.trackIncomingCalls()
         
         
-        
     }
-    
-    
-  
-    
-    
-    
-    
-    @objc
-    func initCallBtnClicked(_ sender : UIButton){
-        
-        
-        Task {
-            await joinChannel(button : sender)
-        }
-          
-       
-    }
-    
-    func joinChannel(button : UIButton) async {
-        
-        if await !self.checkForPermissions() {
-            generateAlert(errTitle: "ERROR!", errMsg: "If you want to use this app you must give the permissions" , actions: [UIAlertAction(title: "OK", style: .cancel)])
-            return
-        }
-        
-        else {
-            let currentUserId = viewModel.currentUserId
-            let targetUserId = viewModel.friends[button.tag].friendId
-            var channelName = currentUserId + targetUserId
-            
-            let (result,error) = await viewModel.getToken(channelName: channelName)
-            
-            let (targetUserResult,_) = await viewModel.getToken(channelName: channelName)
-            
-            
-            
-            if error != nil {
-                self.generateAlert(errTitle: "ERROR!", errMsg: error!.localizedDescription)
-            }else if result != nil {
-                
-               
-                engine.joinChannel(byToken: result!.token, channelId: result!.channel, info: nil, uid: 0) { a, b, c in
-                        
-                    self.engine.setEnableSpeakerphone(true)
-                    print("Succesfully joined the channel")
-                    self.closeTheCalBtn.isHidden = false
-                    
-                    print(result?.token == targetUserResult?.token)
-                    print(channelName)
-                    print(a)
-                    print(b)
-                    print(c)
-                    Task {
-                        await self.viewModel.callTheUser(targetId: targetUserId, channel: channelName , targetUserToken : targetUserResult!.token)
-                    }
-                    
-                    
-                }
-            }
-            
-            
-        }
-        
-     }
-     
-  
 
 }
 

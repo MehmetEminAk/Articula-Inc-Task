@@ -14,8 +14,6 @@ let agoraChatAppKey = "71932196#1089248"
 let agoraCurrentUserId = UserDefaults.standard.string(forKey: "agoraCurrentUserId") ?? "deneme1"
 let baseUrl = "mysteriosdeveloper.fun"
 let apiScheme = "http"
-
-var isFirstControl = true
 let deviceWidth = UIScreen.main.bounds.width
 let deviceHeight = UIScreen.main.bounds.height
 
